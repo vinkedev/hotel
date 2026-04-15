@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Hôtel Étoile | Réservation directe</title>
-  <!-- Font & simple reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <title>Hôtel Étoile | Réservation directe & design moderne</title>
+  <!-- Google Fonts & modern reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (gratuit, icones modernes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -15,68 +17,75 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fefcf8;
-      color: #1e2a2e;
+      background-color: #ffffff;
+      color: #1A2C2E;
       scroll-behavior: smooth;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-    /* container utilitaire */
+    /* container moderne avec largeur fluide */
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
-    /* bouton principal (CTA réservation) */
+    /* boutons modernes */
     .btn-primary {
-      background-color: #c7422b;
+      background: #D94A2B;
       color: white;
       border: none;
-      padding: 14px 28px;
+      padding: 14px 32px;
       font-size: 1rem;
       font-weight: 600;
-      border-radius: 40px;
+      border-radius: 60px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: 0 2px 8px rgba(199, 66, 43, 0.2);
+      gap: 10px;
+      box-shadow: 0 6px 14px rgba(217, 74, 43, 0.2);
       text-decoration: none;
+      letter-spacing: -0.2px;
     }
 
     .btn-primary:hover {
-      background-color: #a83421;
-      transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(199, 66, 43, 0.25);
+      background: #BD3A1E;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(217, 74, 43, 0.25);
     }
 
     .btn-outline {
       background: transparent;
-      border: 1.5px solid #c7422b;
-      color: #c7422b;
-      padding: 10px 20px;
-      border-radius: 40px;
-      font-weight: 500;
+      border: 1.5px solid #D94A2B;
+      color: #D94A2B;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 600;
       transition: 0.2s;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
     }
 
     .btn-outline:hover {
-      background: #c7422b10;
+      background: #D94A2B10;
+      border-color: #BD3A1E;
+      color: #BD3A1E;
     }
 
-    /* header fixe avec bouton résa */
+    /* navbar glassmorphisme */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 245, 0.96);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-      z-index: 100;
-      padding: 16px 0;
+      background: rgba(255, 255, 248, 0.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+      z-index: 1000;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
     }
 
     .nav-flex {
@@ -84,23 +93,27 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 1.7rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: #2c3e2f;
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #2C4A3B 0%, #D94A2B 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
-
     .logo span {
-      color: #c7422b;
+      background: none;
+      color: #D94A2B;
+      -webkit-background-clip: unset;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 32px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -108,464 +121,479 @@
     .nav-links a {
       text-decoration: none;
       font-weight: 500;
-      color: #2d3e40;
+      color: #2C4A3B;
       transition: 0.2s;
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-      color: #c7422b;
+      color: #D94A2B;
     }
 
-    /* hero section */
+    /* Hero section avec image réelle HD */
     .hero {
-      background: linear-gradient(105deg, #f2efe7 0%, #fff7ef 100%);
-      padding: 60px 0 70px;
+      position: relative;
+      background: #F5F2EB;
+      padding: 0;
+      overflow: hidden;
     }
-
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 48px;
       align-items: center;
-      justify-content: space-between;
+      gap: 40px;
+      padding: 60px 0 70px;
     }
-
     .hero-text {
-      flex: 1;
-      min-width: 260px;
+      flex: 1.2;
+      min-width: 280px;
     }
-
     .hero-text h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.5rem;
+      font-weight: 800;
       line-height: 1.2;
-      color: #2c3e2f;
-      margin-bottom: 16px;
+      color: #1E3A2F;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
-
     .hero-text p {
       font-size: 1.2rem;
-      color: #3e5a5c;
+      color: #496F64;
       margin-bottom: 32px;
+      max-width: 90%;
     }
-
     .hero-badge {
-      background: #e9dfce;
-      padding: 8px 16px;
-      border-radius: 40px;
+      background: #E8DDD0;
+      padding: 8px 18px;
+      border-radius: 60px;
       display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #B44A2C;
     }
-
     .hero-image {
       flex: 1;
-      background: url('https://placehold.co/600x400/dfd9cd/4a3b2c?text=Hôtel+Étoile') center/cover no-repeat;
-      border-radius: 28px;
-      min-height: 320px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+      min-height: 380px;
+      background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=550&fit=crop');
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+    .hero-image:hover {
+      transform: scale(1.01);
     }
 
-    /* widget de réservation flottant / section */
+    /* widget flottant moderne */
     .booking-widget {
       background: white;
-      border-radius: 32px;
-      padding: 28px 30px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-radius: 40px;
+      padding: 32px 36px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.12);
       margin-top: -40px;
       position: relative;
-      z-index: 5;
-      border: 1px solid #f0e4d4;
+      z-index: 10;
+      border: 1px solid rgba(217, 74, 43, 0.1);
     }
 
     .widget-title {
-      font-weight: 600;
-      margin-bottom: 20px;
-      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      font-size: 1.4rem;
+      color: #1E3A2F;
     }
 
     .booking-form {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
       align-items: flex-end;
     }
 
     .form-group {
       flex: 1;
-      min-width: 140px;
+      min-width: 150px;
     }
 
     .form-group label {
       display: block;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #6c7a5e;
-      margin-bottom: 6px;
+      letter-spacing: 0.6px;
+      color: #A47E5C;
+      margin-bottom: 8px;
     }
 
     .form-group input, .form-group select {
       width: 100%;
-      padding: 12px 14px;
-      border-radius: 28px;
-      border: 1px solid #e2dacf;
+      padding: 14px 18px;
+      border-radius: 60px;
+      border: 1px solid #EADDCB;
       font-family: inherit;
-      background: #fffcf8;
+      background: #FEFCF9;
       font-size: 0.9rem;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: #D94A2B;
+      box-shadow: 0 0 0 3px rgba(217,74,43,0.1);
     }
 
     .btn-whatsapp {
-      background-color: #25D366;
-      box-shadow: 0 2px 8px rgba(37,211,102,0.2);
+      background: #25D366;
+      box-shadow: 0 6px 14px rgba(37,211,102,0.2);
     }
     .btn-whatsapp:hover {
-      background-color: #1da851;
+      background: #20B859;
     }
 
-    /* chambres section */
+    /* section chambres avec images Unsplash premium */
     .section {
-      padding: 70px 0;
+      padding: 90px 0;
     }
-
     .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 48px;
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 56px;
       text-align: center;
-      color: #2c3e2f;
+      color: #1E3A2F;
+      letter-spacing: -0.5px;
     }
 
     .rooms-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 40px;
       justify-content: center;
     }
-
     .room-card {
       background: white;
-      border-radius: 28px;
+      border-radius: 36px;
       overflow: hidden;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
-      transition: 0.2s;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
       flex: 1;
-      min-width: 260px;
-      max-width: 340px;
-      border: 1px solid #f1e7dd;
+      min-width: 280px;
+      max-width: 360px;
+      border: 1px solid #F2E8DD;
     }
-
+    .room-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 38px -16px rgba(0,0,0,0.12);
+    }
     .room-img {
-      height: 220px;
+      height: 260px;
       background-size: cover;
       background-position: center;
+      transition: transform 0.5s ease;
     }
-
+    .room-card:hover .room-img {
+      transform: scale(1.02);
+    }
     .room-info {
-      padding: 24px;
+      padding: 28px;
     }
-
     .room-info h3 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      font-weight: 700;
       margin-bottom: 8px;
     }
-
     .room-price {
-      font-weight: 700;
-      color: #c7422b;
-      font-size: 1.4rem;
+      font-weight: 800;
+      color: #D94A2B;
+      font-size: 1.6rem;
       margin: 12px 0;
     }
-
-    .room-price small {
-      font-size: 0.8rem;
-      font-weight: normal;
-      color: #5f6c64;
-    }
-
     .room-features {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 16px 0;
-      font-size: 0.8rem;
-      color: #4a5b52;
+      gap: 12px;
+      margin: 18px 0 20px;
+      font-size: 0.85rem;
+      color: #5A756B;
     }
 
-    /* services icones */
+    /* services icônes modernes */
     .services-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
+      gap: 48px;
       text-align: center;
     }
-
     .service-item {
       flex: 1;
       min-width: 110px;
+      background: #FEFAF5;
+      padding: 20px 12px;
+      border-radius: 32px;
+      transition: 0.2s;
+    }
+    .service-item i {
+      font-size: 2.4rem;
+      color: #D94A2B;
+      margin-bottom: 12px;
+      display: inline-block;
     }
     .service-item span {
-      font-size: 2.2rem;
-      display: block;
-      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2C4A3B;
     }
 
-    /* avis */
+    /* avis élégants */
     .reviews {
-      background: #faf7f0;
+      background: #FDF9F2;
     }
     .review-cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 28px;
+      gap: 32px;
       justify-content: center;
     }
     .review-card {
       background: white;
-      border-radius: 28px;
-      padding: 24px;
-      max-width: 320px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border-radius: 32px;
+      padding: 32px;
+      max-width: 340px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #F0E4D6;
     }
-    .stars {
-      color: #f5b042;
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+    .stars i {
+      color: #F4B942;
+      font-size: 1rem;
+      margin-right: 2px;
     }
     .review-text {
-      font-style: italic;
-      margin: 12px 0;
+      font-style: normal;
+      margin: 18px 0;
+      color: #2C3E35;
+      font-weight: 500;
+      line-height: 1.4;
     }
-    /* footer */
+
+    /* footer moderne */
     .footer {
-      background: #1e2a2e;
-      color: #e6ddd0;
-      padding: 48px 0 24px;
-      margin-top: 20px;
-    }
-    .footer a {
-      color: #f3cfb5;
-      text-decoration: none;
+      background: #131F21;
+      color: #E3D9CF;
+      padding: 60px 0 30px;
+      margin-top: 40px;
     }
     .footer-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 32px;
+      gap: 48px;
     }
-    .footer-col {
-      flex: 1;
+    .footer-col h4 {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .footer a {
+      color: #F3D5B5;
+      text-decoration: none;
     }
     .copyright {
       text-align: center;
-      margin-top: 48px;
+      margin-top: 56px;
       font-size: 0.8rem;
-      border-top: 1px solid #3b4b46;
-      padding-top: 24px;
-    }
-    /* responsive */
-    @media (max-width: 780px) {
-      .nav-flex {
-        flex-direction: column;
-      }
-      .hero-text h1 {
-        font-size: 2.2rem;
-      }
-      .booking-form {
-        flex-direction: column;
-      }
-      .btn-primary, .btn-whatsapp {
-        justify-content: center;
-        width: 100%;
-      }
-    }
-    .whatsapp-icon {
-      background: #25D366;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      font-size: 0.9rem;
+      border-top: 1px solid #2C3E38;
+      padding-top: 28px;
     }
     .floating-resa {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 28px;
+      right: 28px;
       background: #25D366;
-      border-radius: 60px;
-      padding: 12px 20px;
+      border-radius: 80px;
+      padding: 14px 26px;
       color: white;
       font-weight: bold;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
       z-index: 99;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
+      gap: 12px;
+      font-size: 0.95rem;
+      transition: 0.2s;
     }
-    @media (max-width: 550px) {
-      .floating-resa span:not(.whatsapp-icon) { display: none; }
-      .floating-resa { padding: 12px; border-radius: 50px; }
+    .floating-resa:hover {
+      transform: scale(1.02);
+      background: #20B859;
+    }
+
+    @media (max-width: 780px) {
+      .container { padding: 0 24px; }
+      .hero-text h1 { font-size: 2.5rem; }
+      .booking-form { flex-direction: column; }
+      .btn-primary, .btn-whatsapp { width: 100%; justify-content: center; }
+      .section-title { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR fixe avec réservation toujours visible -->
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">Hôtel <span>Étoile</span></div>
     <div class="nav-links">
-      <a href="#chambres">Chambres</a>
-      <a href="#services">Services</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-      <a href="#" id="navReserveBtn" class="btn-primary" style="padding: 8px 20px;">Réserver</a>
+      <a href="#chambres"><i class="fas fa-bed"></i> Chambres</a>
+      <a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
+      <a href="#avis"><i class="fas fa-star"></i> Avis</a>
+      <a href="#contact"><i class="fas fa-map-pin"></i> Contact</a>
+      <a href="#" id="navReserveBtn" class="btn-primary" style="padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Réserver</a>
     </div>
   </div>
 </nav>
 
-<!-- Hero section -->
+<!-- Hero avec image luxe -->
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-text">
-      <div class="hero-badge">✨ Élégance & confort au cœur de la ville</div>
-      <h1>Votre séjour <br>commence ici</h1>
-      <p>Chambres lumineuses, petit-déjeuner maison et un accueil chaleureux. Réservez directement et bénéficiez du meilleur tarif.</p>
-      <a href="#" class="btn-primary" id="heroReserveBtn">📅 Réserver maintenant</a>
+      <div class="hero-badge"><i class="fas fa-crown"></i> Élégance & art de vivre</div>
+      <h1>Votre refuge <br>au cœur de Paris</h1>
+      <p>Design raffiné, chambres lumineuses et service sur mesure. Réservez directement et vivez l'authenticité.</p>
+      <a href="#" class="btn-primary" id="heroReserveBtn"><i class="fab fa-whatsapp"></i> Réserver en 1 clic</a>
     </div>
-    <div class="hero-image" style="background-image: url('https://placehold.co/600x400/d6ccbb/6b4c3b?text=Terrasse+Hôtel');"></div>
+    <div class="hero-image"></div>
   </div>
 </section>
 
-<!-- Widget de réservation (visible juste après hero) -->
-<div class="container" style="margin-top: -20px;">
+<!-- Widget réservation moderne -->
+<div class="container" style="margin-top: -30px;">
   <div class="booking-widget">
-    <div class="widget-title">✨ Vérifiez vos dates et réservez par WhatsApp</div>
+    <div class="widget-title"><i class="fas fa-calendar-alt" style="color:#D94A2B;"></i> Vérifiez vos dates & réservez sur WhatsApp</div>
     <div class="booking-form">
       <div class="form-group">
-        <label>Arrivée</label>
-        <input type="date" id="checkin" value="2026-04-20">
+        <label><i class="fas fa-calendar-check"></i> Arrivée</label>
+        <input type="date" id="checkin" value="2026-04-25">
       </div>
       <div class="form-group">
-        <label>Départ</label>
-        <input type="date" id="checkout" value="2026-04-22">
+        <label><i class="fas fa-calendar-day"></i> Départ</label>
+        <input type="date" id="checkout" value="2026-04-27">
       </div>
       <div class="form-group">
-        <label>Adultes</label>
+        <label><i class="fas fa-user-friends"></i> Adultes</label>
         <select id="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
       </div>
       <div class="form-group">
-        <label>Chambre préférée</label>
+        <label><i class="fas fa-door-open"></i> Chambre</label>
         <select id="roomTypeSelect">
-          <option value="Standard">Standard – À partir de 89€</option>
-          <option value="Supérieure">Supérieure – À partir de 129€</option>
-          <option value="Suite Familiale">Suite Familiale – À partir de 179€</option>
+          <option value="Standard – À partir de 89€">Standard – 89€/nuit</option>
+          <option value="Supérieure – À partir de 129€" selected>Supérieure – 129€/nuit</option>
+          <option value="Suite Familiale – À partir de 179€">Suite Familiale – 179€/nuit</option>
         </select>
       </div>
       <div class="form-group">
-        <button id="whatsappBookingBtn" class="btn-primary btn-whatsapp" style="background:#25D366; width:100%;">📲 Réserver via WhatsApp</button>
+        <button id="whatsappBookingBtn" class="btn-primary btn-whatsapp" style="background:#25D366; width:100%;"><i class="fab fa-whatsapp"></i> Réserver via WhatsApp</button>
       </div>
     </div>
-    <p style="font-size: 0.7rem; margin-top: 14px; color:#9e8b73;">🔒 Réservation instantanée par message — aucune carte requise.</p>
+    <p style="font-size: 0.7rem; margin-top: 16px; color:#b59e82;"><i class="fas fa-lock"></i> Réservation instantanée, sans carte bancaire</p>
   </div>
 </div>
 
-<!-- Section Chambres -->
+<!-- Chambres avec images réelles haute qualité -->
 <section id="chambres" class="section">
   <div class="container">
-    <h2 class="section-title">Nos chambres & suites</h2>
+    <h2 class="section-title">Nos chambres d'exception</h2>
     <div class="rooms-grid">
       <div class="room-card">
-        <div class="room-img" style="background-image: url('https://placehold.co/400x260/d9cfbf/8b694d?text=Chambre+Standard');"></div>
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Chambre Standard</h3>
           <div class="room-price">89€ <small>/ nuit</small></div>
-          <div class="room-features">🛏 Lit double • 📺 TV écran plat • 🚿 Salle de bain privée</div>
-          <button class="btn-outline bookRoomBtn" data-room="Standard (89€/nuit)">Réserver cette chambre</button>
+          <div class="room-features"><i class="fas fa-bed"></i> Lit double 160cm • <i class="fas fa-tv"></i> TV 4K • <i class="fas fa-shower"></i> Douche italienne</div>
+          <button class="btn-outline bookRoomBtn" data-room="Standard (89€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
       <div class="room-card">
-        <div class="room-img" style="background-image: url('https://placehold.co/400x260/d2c4ae/886d4b?text=Supérieure');"></div>
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Chambre Supérieure</h3>
           <div class="room-price">129€ <small>/ nuit</small></div>
-          <div class="room-features">🛏 Grand lit • Balcon • ☕ Machine à café • Vue jardin</div>
-          <button class="btn-outline bookRoomBtn" data-room="Supérieure (129€/nuit)">Réserver cette chambre</button>
+          <div class="room-features"><i class="fas fa-king"></i> King size • <i class="fas fa-coffee"></i> Nespresso • <i class="fas fa-tree"></i> Vue jardin</div>
+          <button class="btn-outline bookRoomBtn" data-room="Supérieure (129€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
       <div class="room-card">
-        <div class="room-img" style="background-image: url('https://placehold.co/400x260/cbbfaa/7b5e41?text=Suite+Famille');"></div>
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Suite Familiale</h3>
           <div class="room-price">179€ <small>/ nuit</small></div>
-          <div class="room-features">👨‍👩‍👧 2 chambres • Salon • Cuisine équipée • Vue panoramique</div>
-          <button class="btn-outline bookRoomBtn" data-room="Suite Familiale (179€/nuit)">Réserver cette chambre</button>
+          <div class="room-features"><i class="fas fa-users"></i> 2 chambres • <i class="fas fa-wine-glass-alt"></i> Mini-bar offert • <i class="fas fa-city"></i> Panoramique</div>
+          <button class="btn-outline bookRoomBtn" data-room="Suite Familiale (179€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section id="services" class="section" style="background:#fefbf6;">
+<!-- Services avec icônes modernes -->
+<section id="services" class="section" style="background:#FEFAF5;">
   <div class="container">
-    <h2 class="section-title">Services & équipements</h2>
+    <h2 class="section-title">Services haut de gamme</h2>
     <div class="services-grid">
-      <div class="service-item"><span>🍳</span> Petit-déjeuner inclus</div>
-      <div class="service-item"><span>🅿️</span> Parking gratuit</div>
-      <div class="service-item"><span>📶</span> Wi-Fi haut débit</div>
-      <div class="service-item"><span>❄️</span> Climatisation</div>
-      <div class="service-item"><span>🐾</span> Animaux acceptés</div>
-      <div class="service-item"><span>🧺</span> Service blanchisserie</div>
+      <div class="service-item"><i class="fas fa-utensils"></i><span> Petit-déjeuner BIO</span></div>
+      <div class="service-item"><i class="fas fa-parking"></i><span> Parking privé gratuit</span></div>
+      <div class="service-item"><i class="fas fa-wifi"></i><span> Wi-Fi ultra rapide</span></div>
+      <div class="service-item"><i class="fas fa-wind"></i><span> Climatisation réversible</span></div>
+      <div class="service-item"><i class="fas fa-dog"></i><span> Animaux bienvenus</span></div>
+      <div class="service-item"><i class="fas fa-concierge-bell"></i><span> Room service 24/7</span></div>
     </div>
   </div>
 </section>
 
-<!-- Avis clients -->
+<!-- Avis clients modernes -->
 <section id="avis" class="section reviews">
   <div class="container">
-    <h2 class="section-title">Ils nous ont fait confiance</h2>
+    <h2 class="section-title">Ils adorent Hôtel Étoile</h2>
     <div class="review-cards">
       <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">“Accueil exceptionnel, chambre très propre et literie parfaite. Je reviendrai !”</div>
-        <p>— Sophie D.</p>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="review-text">“Un séjour parfait ! Chambre élégante, personnel aux petits soins. La réservation WhatsApp hyper rapide.”</div>
+        <p><strong>— Sophie D.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Voyageuse</p>
       </div>
       <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">“Le petit-déjeuner maison et le calme. Réservation directe super simple par WhatsApp.”</div>
-        <p>— Marc L.</p>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="review-text">“Le petit-déjeuner maison et le calme. Literie incroyable, je reviens chaque année !”</div>
+        <p><strong>— Marc L.</strong> <i class="fas fa-medal"></i> Client fidèle</p>
       </div>
       <div class="review-card">
-        <div class="stars">★★★★☆</div>
-        <div class="review-text">“Très bien situé, rapport qualité/prix top. La suite familiale est spacieuse.”</div>
-        <p>— Camille & famille</p>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <div class="review-text">“Très bien situé, la suite familiale est spacieuse et décorée avec goût. Parking gratuit appréciable.”</div>
+        <p><strong>— Famille Durand</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact + map -->
+<!-- Contact & carte -->
 <section id="contact" class="section">
   <div class="container">
-    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 50px;">
       <div style="flex:1">
-        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">📍 Nous trouver</h3>
-        <p><strong>Hôtel Étoile</strong><br>12 Rue des Lilas, 75011 Paris<br>📞 <a href="tel:+33123456789">+33 1 23 45 67 89</a><br>✉️ contact@hoteletoile.fr</p>
-        <div style="margin: 20px 0;">
-          <a href="#" id="contactWhatsappBtn" class="btn-primary" style="background:#25D366;">📱 Réserver par WhatsApp</a>
+        <h3 style="font-size: 2rem; margin-bottom: 24px; font-weight: 700;"><i class="fas fa-map-marker-alt" style="color:#D94A2B;"></i> Nous trouver</h3>
+        <p style="margin-bottom: 8px;"><strong>Hôtel Étoile</strong><br>12 Rue des Lilas, 75011 Paris</p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+33123456789" style="color:#D94A2B;">+33 1 23 45 67 89</a><br>
+        <i class="fas fa-envelope"></i> contact@hoteletoile.fr</p>
+        <div style="margin: 32px 0;">
+          <a href="#" id="contactWhatsappBtn" class="btn-primary" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Réserver par WhatsApp</a>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+          <i class="fab fa-instagram fa-2x" style="color:#A47E5C;"></i>
+          <i class="fab fa-facebook fa-2x" style="color:#A47E5C;"></i>
         </div>
       </div>
-      <div style="flex:1; background:#e6ddcf; border-radius: 28px; min-height: 200px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color:#5e4e3a;">
-        🗺️ [Carte Google Maps] — 5 min à pied de la gare
+      <div style="flex:1; background: #E6DDD0; border-radius: 36px; min-height: 240px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color:#5E4A34; flex-direction: column;">
+        <i class="fas fa-map" style="font-size: 2rem; margin-bottom: 12px;"></i>
+        <span>📍 À 5 min à pied de la Gare de Lyon & métro</span>
+        <span style="font-size:0.7rem;">[Plan interactif disponible]</span>
       </div>
     </div>
   </div>
@@ -574,123 +602,87 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <h4>Hôtel Étoile</h4>
-      <p>Réservation directe sans commission.<br>Meilleur tarif garanti.</p>
+      <h4><i class="fas fa-star-of-life"></i> Hôtel Étoile</h4>
+      <p>Réservation directe sans commission.<br>Meilleur tarif garanti en ligne.</p>
     </div>
     <div class="footer-col">
-      <h4>Liens rapides</h4>
-      <p><a href="#chambres">Chambres</a><br><a href="#services">Services</a><br><a href="#avis">Avis</a></p>
+      <h4>Explorer</h4>
+      <p><a href="#chambres">Chambres</a><br><a href="#services">Services</a><br><a href="#avis">Avis clients</a></p>
     </div>
     <div class="footer-col">
-      <h4>Contact</h4>
-      <p>📞 +33 1 23 45 67 89<br>📧 contact@hoteletoile.fr</p>
+      <h4>Contact direct</h4>
+      <p><i class="fas fa-phone-alt"></i> +33 1 23 45 67 89<br><i class="fab fa-whatsapp"></i> WhatsApp : +33 7 56 98 74 12</p>
     </div>
   </div>
   <div class="copyright">
-    © 2026 Hôtel Étoile – Mentions légales | Hébergé sur GitHub Pages
+    © 2026 Hôtel Étoile – Design moderne – Réservation instantanée
   </div>
 </footer>
 
 <!-- Bouton flottant WhatsApp -->
 <a href="#" id="floatingWhatsappBtn" class="floating-resa">
-  <span class="whatsapp-icon">💬</span> <span>Réserver par WhatsApp</span>
+  <i class="fab fa-whatsapp fa-lg"></i> <span>Réserver direct</span>
 </a>
 
 <script>
-  // Numéro WhatsApp de l'hôtel (à modifier par le propriétaire)
-  const HOTEL_PHONE = "33756987412";   // format international sans '+' : 33 7 56 98 74 12
-  const DEFAULT_MESSAGE = "Bonjour, je souhaite réserver une chambre à l'Hôtel Étoile.";
-
-  // Fonction centrale pour générer le message personnalisé
-  function generateWhatsAppMessage(checkin, checkout, adults, roomType) {
-    let message = `Bonjour, je souhaite réserver à l'Hôtel Étoile :\n`;
-    if (checkin && checkout) message += `📅 Arrivée : ${checkin}\n📅 Départ : ${checkout}\n`;
-    if (adults) message += `👥 Adultes : ${adults}\n`;
-    if (roomType) message += `🏨 Chambre : ${roomType}\n`;
-    message += `\nMerci de me confirmer la disponibilité et le prix total.`;
-    return encodeURIComponent(message);
+  const HOTEL_PHONE = "33756987412";  
+  function generateMsg(checkin, checkout, adults, roomDetail) {
+    let msg = `Bonjour, je souhaite réserver à l'Hôtel Étoile :%0A`;
+    if(checkin) msg += `📅 Arrivée : ${checkin}%0A`;
+    if(checkout) msg += `📅 Départ : ${checkout}%0A`;
+    if(adults) msg += `👥 Adultes : ${adults}%0A`;
+    if(roomDetail) msg += `🏨 Chambre : ${roomDetail}%0A`;
+    msg += `%0AMerci de me confirmer disponibilité et prix total.`;
+    return msg;
   }
 
-  // Récupérer les valeurs du widget
-  function getWidgetValues() {
+  function getWidgetVals() {
     const checkin = document.getElementById('checkin').value;
     const checkout = document.getElementById('checkout').value;
     const adults = document.getElementById('adults').value;
     const roomSelect = document.getElementById('roomTypeSelect');
-    const roomText = roomSelect.options[roomSelect.selectedIndex]?.text || "Chambre Standard";
-    return { checkin, checkout, adults, room: roomText };
+    const room = roomSelect.options[roomSelect.selectedIndex]?.text || "Chambre Standard";
+    return { checkin, checkout, adults, room };
   }
 
-  // Action réservation WhatsApp
-  function openWhatsAppReservation(checkin, checkout, adults, roomDetail) {
-    let message = generateWhatsAppMessage(checkin, checkout, adults, roomDetail);
-    const url = `https://wa.me/${HOTEL_PHONE}?text=${message}`;
+  function openWA(checkin, checkout, adults, roomDetail) {
+    const url = `https://wa.me/${HOTEL_PHONE}?text=${generateMsg(checkin, checkout, adults, roomDetail)}`;
     window.open(url, '_blank');
   }
 
-  // Bouton principal du widget (réserver via WhatsApp)
   const widgetBtn = document.getElementById('whatsappBookingBtn');
-  if (widgetBtn) {
+  if(widgetBtn) {
     widgetBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const { checkin, checkout, adults, room } = getWidgetValues();
-      if (!checkin || !checkout) {
-        alert("Veuillez sélectionner les dates d'arrivée et de départ.");
-        return;
-      }
-      openWhatsAppReservation(checkin, checkout, adults, room);
+      const { checkin, checkout, adults, room } = getWidgetVals();
+      if(!checkin || !checkout) { alert("Veuillez sélectionner les dates d'arrivée et de départ."); return; }
+      openWA(checkin, checkout, adults, room);
     });
   }
 
-  // Tous les boutons "Réserver cette chambre"
-  const bookRoomBtns = document.querySelectorAll('.bookRoomBtn');
-  bookRoomBtns.forEach(btn => {
+  document.querySelectorAll('.bookRoomBtn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const roomInfo = btn.getAttribute('data-room') || "chambre sélectionnée";
-      const today = new Date();
-      const tomorrow = new Date(today);
-      tomorrow.setDate(today.getDate() + 1);
-      const defaultCheckin = today.toISOString().split('T')[0];
-      const defaultCheckout = tomorrow.toISOString().split('T')[0];
-      // On peut pré-remplir avec ces dates, mais on demande aussi dans le message
-      const messageRoom = `Chambre : ${roomInfo}`;
-      let urlMessage = generateWhatsAppMessage(defaultCheckin, defaultCheckout, "2", messageRoom);
-      const waLink = `https://wa.me/${HOTEL_PHONE}?text=${urlMessage}`;
-      window.open(waLink, '_blank');
+      const today = new Date().toISOString().split('T')[0];
+      const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+      openWA(today, tomorrow, "2", roomInfo);
     });
   });
 
-  // Bouton Hero + Nav + floating + contact
-  const heroBtn = document.getElementById('heroReserveBtn');
-  const navReserve = document.getElementById('navReserveBtn');
-  const floatingBtn = document.getElementById('floatingWhatsappBtn');
-  const contactWhatsapp = document.getElementById('contactWhatsappBtn');
+  const simpleReserve = () => {
+    const { checkin, checkout, adults, room } = getWidgetVals();
+    openWA(checkin, checkout, adults, room);
+  };
+  document.getElementById('heroReserveBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
+  document.getElementById('navReserveBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
+  document.getElementById('floatingWhatsappBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
+  document.getElementById('contactWhatsappBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
 
-  function simpleReservationClick() {
-    const { checkin, checkout, adults, room } = getWidgetValues();
-    openWhatsAppReservation(checkin, checkout, adults, room);
-  }
-
-  if (heroBtn) heroBtn.addEventListener('click', (e) => { e.preventDefault(); simpleReservationClick(); });
-  if (navReserve) navReserve.addEventListener('click', (e) => { e.preventDefault(); simpleReservationClick(); });
-  if (floatingBtn) floatingBtn.addEventListener('click', (e) => { e.preventDefault(); simpleReservationClick(); });
-  if (contactWhatsapp) contactWhatsapp.addEventListener('click', (e) => { e.preventDefault(); simpleReservationClick(); });
-
-  // Option: pré-remplir dates par défaut dynamiques
-  const todayFormatted = new Date().toISOString().split('T')[0];
-  const nextDay = new Date();
-  nextDay.setDate(new Date().getDate() + 2);
-  const nextDayFormatted = nextDay.toISOString().split('T')[0];
-  if (document.getElementById('checkin') && !document.getElementById('checkin').value) {
-    document.getElementById('checkin').value = todayFormatted;
-  }
-  if (document.getElementById('checkout') && !document.getElementById('checkout').value) {
-    document.getElementById('checkout').value = nextDayFormatted;
-  }
-  
-  // petit correctif pour le placeholder des images : les images placeholder sont déjà définies
-  console.log("Site hôtel prêt - réservation 100% WhatsApp");
+  const today = new Date().toISOString().split('T')[0];
+  const nextDate = new Date(Date.now() + 2*86400000).toISOString().split('T')[0];
+  if(document.getElementById('checkin') && !document.getElementById('checkin').value) document.getElementById('checkin').value = today;
+  if(document.getElementById('checkout') && !document.getElementById('checkout').value) document.getElementById('checkout').value = nextDate;
 </script>
 </body>
 </html>

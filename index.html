@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Hôtel Étoile | Réservation directe & design moderne</title>
+  <title>Hôtel Sahel Splendeur | Ouagadougou – Réservation directe</title>
   <!-- Google Fonts & modern reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (gratuit, icones modernes) -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,22 +17,21 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1A2C2E;
+      background-color: #FEF9EF;
+      color: #2C2B28;
       scroll-behavior: smooth;
       line-height: 1.5;
     }
 
-    /* container moderne avec largeur fluide */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 32px;
     }
 
-    /* boutons modernes */
+    /* palette "Terre du Burkina" : terracotta, ocre, vert sahel */
     .btn-primary {
-      background: #D94A2B;
+      background: #C25D3A;
       color: white;
       border: none;
       padding: 14px 32px;
@@ -44,21 +43,21 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 6px 14px rgba(217, 74, 43, 0.2);
+      box-shadow: 0 6px 14px rgba(194, 93, 58, 0.2);
       text-decoration: none;
       letter-spacing: -0.2px;
     }
 
     .btn-primary:hover {
-      background: #BD3A1E;
+      background: #A24728;
       transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(217, 74, 43, 0.25);
+      box-shadow: 0 12px 22px rgba(194, 93, 58, 0.25);
     }
 
     .btn-outline {
       background: transparent;
-      border: 1.5px solid #D94A2B;
-      color: #D94A2B;
+      border: 1.5px solid #C25D3A;
+      color: #C25D3A;
       padding: 10px 24px;
       border-radius: 60px;
       font-weight: 600;
@@ -71,16 +70,16 @@
     }
 
     .btn-outline:hover {
-      background: #D94A2B10;
-      border-color: #BD3A1E;
-      color: #BD3A1E;
+      background: #C25D3A10;
+      border-color: #A24728;
+      color: #A24728;
     }
 
-    /* navbar glassmorphisme */
+    /* navbar avec inspiration locale */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 248, 0.92);
+      background: rgba(255, 251, 240, 0.94);
       backdrop-filter: blur(14px);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
       z-index: 1000;
@@ -100,14 +99,14 @@
       font-size: 1.9rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #2C4A3B 0%, #D94A2B 100%);
+      background: linear-gradient(135deg, #A6633B 0%, #C25D3A 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
     .logo span {
       background: none;
-      color: #D94A2B;
+      color: #D68B3A;
       -webkit-background-clip: unset;
     }
 
@@ -121,19 +120,19 @@
     .nav-links a {
       text-decoration: none;
       font-weight: 500;
-      color: #2C4A3B;
+      color: #4A3B2C;
       transition: 0.2s;
       font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-      color: #D94A2B;
+      color: #C25D3A;
     }
 
-    /* Hero section avec image réelle HD */
+    /* Hero avec ambiance Ouaga */
     .hero {
       position: relative;
-      background: #F5F2EB;
+      background: #F9EFE1;
       padding: 0;
       overflow: hidden;
     }
@@ -152,25 +151,25 @@
       font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.2;
-      color: #1E3A2F;
+      color: #5B3C28;
       margin-bottom: 20px;
       letter-spacing: -1px;
     }
     .hero-text p {
       font-size: 1.2rem;
-      color: #496F64;
+      color: #8B694C;
       margin-bottom: 32px;
       max-width: 90%;
     }
     .hero-badge {
-      background: #E8DDD0;
+      background: #EADBCB;
       padding: 8px 18px;
       border-radius: 60px;
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 600;
       margin-bottom: 24px;
-      color: #B44A2C;
+      color: #B4512A;
     }
     .hero-image {
       flex: 1;
@@ -178,9 +177,9 @@
       overflow: hidden;
       box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
       min-height: 380px;
-      background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=550&fit=crop');
+      background-image: url('https://images.unsplash.com/photo-1590077428593-a55bb4c2465a?w=800&h=550&fit=crop');
       background-size: cover;
-      background-position: center;
+      background-position: center 30%;
       transition: transform 0.4s ease;
     }
     .hero-image:hover {
@@ -196,14 +195,14 @@
       margin-top: -40px;
       position: relative;
       z-index: 10;
-      border: 1px solid rgba(217, 74, 43, 0.1);
+      border: 1px solid rgba(194, 93, 58, 0.15);
     }
 
     .widget-title {
       font-weight: 700;
       margin-bottom: 24px;
       font-size: 1.4rem;
-      color: #1E3A2F;
+      color: #5B3C28;
     }
 
     .booking-form {
@@ -224,7 +223,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
-      color: #A47E5C;
+      color: #A5724C;
       margin-bottom: 8px;
     }
 
@@ -232,16 +231,16 @@
       width: 100%;
       padding: 14px 18px;
       border-radius: 60px;
-      border: 1px solid #EADDCB;
+      border: 1px solid #EAD7C4;
       font-family: inherit;
-      background: #FEFCF9;
+      background: #FEFCF8;
       font-size: 0.9rem;
       transition: 0.2s;
     }
     .form-group input:focus, .form-group select:focus {
       outline: none;
-      border-color: #D94A2B;
-      box-shadow: 0 0 0 3px rgba(217,74,43,0.1);
+      border-color: #C25D3A;
+      box-shadow: 0 0 0 3px rgba(194,93,58,0.1);
     }
 
     .btn-whatsapp {
@@ -252,7 +251,7 @@
       background: #20B859;
     }
 
-    /* section chambres avec images Unsplash premium */
+    /* section chambres */
     .section {
       padding: 90px 0;
     }
@@ -261,7 +260,7 @@
       font-weight: 700;
       margin-bottom: 56px;
       text-align: center;
-      color: #1E3A2F;
+      color: #5B3C28;
       letter-spacing: -0.5px;
     }
 
@@ -280,7 +279,7 @@
       flex: 1;
       min-width: 280px;
       max-width: 360px;
-      border: 1px solid #F2E8DD;
+      border: 1px solid #F2E5D8;
     }
     .room-card:hover {
       transform: translateY(-8px);
@@ -305,7 +304,7 @@
     }
     .room-price {
       font-weight: 800;
-      color: #D94A2B;
+      color: #C25D3A;
       font-size: 1.6rem;
       margin: 12px 0;
     }
@@ -315,10 +314,10 @@
       gap: 12px;
       margin: 18px 0 20px;
       font-size: 0.85rem;
-      color: #5A756B;
+      color: #6F5843;
     }
 
-    /* services icônes modernes */
+    /* services */
     .services-grid {
       display: flex;
       flex-wrap: wrap;
@@ -329,25 +328,25 @@
     .service-item {
       flex: 1;
       min-width: 110px;
-      background: #FEFAF5;
+      background: #FFF7EF;
       padding: 20px 12px;
       border-radius: 32px;
       transition: 0.2s;
     }
     .service-item i {
       font-size: 2.4rem;
-      color: #D94A2B;
+      color: #C25D3A;
       margin-bottom: 12px;
       display: inline-block;
     }
     .service-item span {
       font-weight: 600;
-      color: #2C4A3B;
+      color: #4A3B2C;
     }
 
-    /* avis élégants */
+    /* avis */
     .reviews {
-      background: #FDF9F2;
+      background: #FEF5EA;
     }
     .review-cards {
       display: flex;
@@ -361,7 +360,7 @@
       padding: 32px;
       max-width: 340px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.02);
-      border: 1px solid #F0E4D6;
+      border: 1px solid #F0E2D2;
     }
     .stars i {
       color: #F4B942;
@@ -371,15 +370,15 @@
     .review-text {
       font-style: normal;
       margin: 18px 0;
-      color: #2C3E35;
+      color: #3E3328;
       font-weight: 500;
       line-height: 1.4;
     }
 
-    /* footer moderne */
+    /* footer */
     .footer {
-      background: #131F21;
-      color: #E3D9CF;
+      background: #2F2A24;
+      color: #E9DCCF;
       padding: 60px 0 30px;
       margin-top: 40px;
     }
@@ -402,7 +401,7 @@
       text-align: center;
       margin-top: 56px;
       font-size: 0.8rem;
-      border-top: 1px solid #2C3E38;
+      border-top: 1px solid #4A3E34;
       padding-top: 28px;
     }
     .floating-resa {
@@ -441,7 +440,7 @@
 
 <nav class="navbar">
   <div class="container nav-flex">
-    <div class="logo">Hôtel <span>Étoile</span></div>
+    <div class="logo">Hôtel <span>Sahel Splendeur</span></div>
     <div class="nav-links">
       <a href="#chambres"><i class="fas fa-bed"></i> Chambres</a>
       <a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
@@ -452,31 +451,31 @@
   </div>
 </nav>
 
-<!-- Hero avec image luxe -->
+<!-- Hero Ouagadougou -->
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-crown"></i> Élégance & art de vivre</div>
-      <h1>Votre refuge <br>au cœur de Paris</h1>
-      <p>Design raffiné, chambres lumineuses et service sur mesure. Réservez directement et vivez l'authenticité.</p>
+      <div class="hero-badge"><i class="fas fa-sun"></i> Au cœur de Ouaga 2000</div>
+      <h1>Votre havre de paix<br>à Ouagadougou</h1>
+      <p>Élégance sahélienne, piscine à débordement et hospitalité burkinabè. Réservez directement et vivez l'authenticité.</p>
       <a href="#" class="btn-primary" id="heroReserveBtn"><i class="fab fa-whatsapp"></i> Réserver en 1 clic</a>
     </div>
     <div class="hero-image"></div>
   </div>
 </section>
 
-<!-- Widget réservation moderne -->
+<!-- Widget réservation -->
 <div class="container" style="margin-top: -30px;">
   <div class="booking-widget">
-    <div class="widget-title"><i class="fas fa-calendar-alt" style="color:#D94A2B;"></i> Vérifiez vos dates & réservez sur WhatsApp</div>
+    <div class="widget-title"><i class="fas fa-calendar-alt" style="color:#C25D3A;"></i> Vérifiez vos dates & réservez sur WhatsApp</div>
     <div class="booking-form">
       <div class="form-group">
         <label><i class="fas fa-calendar-check"></i> Arrivée</label>
-        <input type="date" id="checkin" value="2026-04-25">
+        <input type="date" id="checkin" value="2026-05-10">
       </div>
       <div class="form-group">
         <label><i class="fas fa-calendar-day"></i> Départ</label>
-        <input type="date" id="checkout" value="2026-04-27">
+        <input type="date" id="checkout" value="2026-05-12">
       </div>
       <div class="form-group">
         <label><i class="fas fa-user-friends"></i> Adultes</label>
@@ -485,115 +484,116 @@
       <div class="form-group">
         <label><i class="fas fa-door-open"></i> Chambre</label>
         <select id="roomTypeSelect">
-          <option value="Standard – À partir de 89€">Standard – 89€/nuit</option>
-          <option value="Supérieure – À partir de 129€" selected>Supérieure – 129€/nuit</option>
-          <option value="Suite Familiale – À partir de 179€">Suite Familiale – 179€/nuit</option>
+          <option value="Chambre Sahel – 75 000 CFA/nuit">Chambre Sahel – 75 000 CFA/nuit</option>
+          <option value="Chambre Savane – 105 000 CFA/nuit" selected>Chambre Savane – 105 000 CFA/nuit</option>
+          <option value="Suite Royale – 155 000 CFA/nuit">Suite Royale – 155 000 CFA/nuit</option>
         </select>
       </div>
       <div class="form-group">
         <button id="whatsappBookingBtn" class="btn-primary btn-whatsapp" style="background:#25D366; width:100%;"><i class="fab fa-whatsapp"></i> Réserver via WhatsApp</button>
       </div>
     </div>
-    <p style="font-size: 0.7rem; margin-top: 16px; color:#b59e82;"><i class="fas fa-lock"></i> Réservation instantanée, sans carte bancaire</p>
+    <p style="font-size: 0.7rem; margin-top: 16px; color:#b59e82;"><i class="fas fa-lock"></i> Réservation instantanée, sans carte bancaire – Paiement possible sur place (FCFA, Mobile Money)</p>
   </div>
 </div>
 
-<!-- Chambres avec images réelles haute qualité -->
+<!-- Chambres adaptées Burkina -->
 <section id="chambres" class="section">
   <div class="container">
-    <h2 class="section-title">Nos chambres d'exception</h2>
+    <h2 class="section-title">Nos chambres d'inspiration sahélienne</h2>
     <div class="rooms-grid">
       <div class="room-card">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
-          <h3>Chambre Standard</h3>
-          <div class="room-price">89€ <small>/ nuit</small></div>
-          <div class="room-features"><i class="fas fa-bed"></i> Lit double 160cm • <i class="fas fa-tv"></i> TV 4K • <i class="fas fa-shower"></i> Douche italienne</div>
-          <button class="btn-outline bookRoomBtn" data-room="Standard (89€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
+          <h3>Chambre Sahel</h3>
+          <div class="room-price">75 000 CFA <small>/ nuit</small></div>
+          <div class="room-features"><i class="fas fa-bed"></i> Lit Queen size • <i class="fas fa-fan"></i> Climatisation • <i class="fas fa-tv"></i> TV satellite</div>
+          <button class="btn-outline bookRoomBtn" data-room="Chambre Sahel – 75 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
       <div class="room-card">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
-          <h3>Chambre Supérieure</h3>
-          <div class="room-price">129€ <small>/ nuit</small></div>
-          <div class="room-features"><i class="fas fa-king"></i> King size • <i class="fas fa-coffee"></i> Nespresso • <i class="fas fa-tree"></i> Vue jardin</div>
-          <button class="btn-outline bookRoomBtn" data-room="Supérieure (129€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
+          <h3>Chambre Savane</h3>
+          <div class="room-price">105 000 CFA <small>/ nuit</small></div>
+          <div class="room-features"><i class="fas fa-king"></i> King size • <i class="fas fa-coffee"></i> Coin salon • <i class="fas fa-tree"></i> Vue jardin tropical</div>
+          <button class="btn-outline bookRoomBtn" data-room="Chambre Savane – 105 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
       <div class="room-card">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
-          <h3>Suite Familiale</h3>
-          <div class="room-price">179€ <small>/ nuit</small></div>
-          <div class="room-features"><i class="fas fa-users"></i> 2 chambres • <i class="fas fa-wine-glass-alt"></i> Mini-bar offert • <i class="fas fa-city"></i> Panoramique</div>
-          <button class="btn-outline bookRoomBtn" data-room="Suite Familiale (179€/nuit)"><i class="fab fa-whatsapp"></i> Réserver</button>
+          <h3>Suite Royale</h3>
+          <div class="room-price">155 000 CFA <small>/ nuit</small></div>
+          <div class="room-features"><i class="fas fa-users"></i> 2 chambres + salon • <i class="fas fa-wine-glass-alt"></i> Mini-bar offert • <i class="fas fa-water"></i> Terrasse privée</div>
+          <button class="btn-outline bookRoomBtn" data-room="Suite Royale – 155 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services avec icônes modernes -->
-<section id="services" class="section" style="background:#FEFAF5;">
+<!-- Services premium inspirés du Burkina -->
+<section id="services" class="section" style="background:#FEFAF2;">
   <div class="container">
-    <h2 class="section-title">Services haut de gamme</h2>
+    <h2 class="section-title">Services & confort local</h2>
     <div class="services-grid">
-      <div class="service-item"><i class="fas fa-utensils"></i><span> Petit-déjeuner BIO</span></div>
-      <div class="service-item"><i class="fas fa-parking"></i><span> Parking privé gratuit</span></div>
-      <div class="service-item"><i class="fas fa-wifi"></i><span> Wi-Fi ultra rapide</span></div>
-      <div class="service-item"><i class="fas fa-wind"></i><span> Climatisation réversible</span></div>
-      <div class="service-item"><i class="fas fa-dog"></i><span> Animaux bienvenus</span></div>
-      <div class="service-item"><i class="fas fa-concierge-bell"></i><span> Room service 24/7</span></div>
+      <div class="service-item"><i class="fas fa-utensils"></i><span> Petit-déjeuner "Burkina saveurs"</span></div>
+      <div class="service-item"><i class="fas fa-parking"></i><span> Parking gardé gratuit</span></div>
+      <div class="service-item"><i class="fas fa-wifi"></i><span> Wi-Fi fibre optique</span></div>
+      <div class="service-item"><i class="fas fa-swimmer"></i><span> Piscine extérieure</span></div>
+      <div class="service-item"><i class="fas fa-dog"></i><span> Animaux acceptés</span></div>
+      <div class="service-item"><i class="fas fa-concierge-bell"></i><span> Navette aéroport (payant)</span></div>
     </div>
   </div>
 </section>
 
-<!-- Avis clients modernes -->
+<!-- Avis clients avec témoignages locaux -->
 <section id="avis" class="section reviews">
   <div class="container">
-    <h2 class="section-title">Ils adorent Hôtel Étoile</h2>
+    <h2 class="section-title">Ils recommandent Hôtel Sahel Splendeur</h2>
     <div class="review-cards">
       <div class="review-card">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div class="review-text">“Un séjour parfait ! Chambre élégante, personnel aux petits soins. La réservation WhatsApp hyper rapide.”</div>
-        <p><strong>— Sophie D.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Voyageuse</p>
+        <div class="review-text">“Séjour exceptionnel à Ouaga ! Le personnel est aux petits soins, piscine magnifique et cadre verdoyant. Réservation WhatsApp hyper fluide.”</div>
+        <p><strong>— Mariam K.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Voyageuse d'affaires</p>
       </div>
       <div class="review-card">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div class="review-text">“Le petit-déjeuner maison et le calme. Literie incroyable, je reviens chaque année !”</div>
-        <p><strong>— Marc L.</strong> <i class="fas fa-medal"></i> Client fidèle</p>
+        <div class="review-text">“Le dîner traditionnel était délicieux, chambre spacieuse et climatisation silencieuse. Je reviens chaque saison !”</div>
+        <p><strong>— Issa B.</strong> <i class="fas fa-medal"></i> Client fidèle</p>
       </div>
       <div class="review-card">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <div class="review-text">“Très bien situé, la suite familiale est spacieuse et décorée avec goût. Parking gratuit appréciable.”</div>
-        <p><strong>— Famille Durand</strong></p>
+        <div class="review-text">“Très bien situé près de la zone des ambassades. Accueil chaleureux, petit-déjeuner avec jus de bissap et beignets. Parfait !”</div>
+        <p><strong>— Famille Sanou</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact & carte -->
+<!-- Contact & carte avec adresse Ouaga -->
 <section id="contact" class="section">
   <div class="container">
     <div style="display: flex; flex-wrap: wrap; gap: 50px;">
       <div style="flex:1">
-        <h3 style="font-size: 2rem; margin-bottom: 24px; font-weight: 700;"><i class="fas fa-map-marker-alt" style="color:#D94A2B;"></i> Nous trouver</h3>
-        <p style="margin-bottom: 8px;"><strong>Hôtel Étoile</strong><br>12 Rue des Lilas, 75011 Paris</p>
-        <p><i class="fas fa-phone-alt"></i> <a href="tel:+33123456789" style="color:#D94A2B;">+33 1 23 45 67 89</a><br>
-        <i class="fas fa-envelope"></i> contact@hoteletoile.fr</p>
+        <h3 style="font-size: 2rem; margin-bottom: 24px; font-weight: 700;"><i class="fas fa-map-marker-alt" style="color:#C25D3A;"></i> Nous trouver à Ouaga</h3>
+        <p style="margin-bottom: 8px;"><strong>Hôtel Sahel Splendeur</strong><br>Boulevard de la Jeunesse, secteur 4<br>Ouagadougou, Burkina Faso</p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+22625369874" style="color:#C25D3A;">+226 25 36 98 74</a><br>
+        <i class="fas fa-envelope"></i> contact@sahelsplendeur.bf</p>
         <div style="margin: 32px 0;">
           <a href="#" id="contactWhatsappBtn" class="btn-primary" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Réserver par WhatsApp</a>
         </div>
         <div style="display: flex; gap: 12px; margin-top: 20px;">
-          <i class="fab fa-instagram fa-2x" style="color:#A47E5C;"></i>
-          <i class="fab fa-facebook fa-2x" style="color:#A47E5C;"></i>
+          <i class="fab fa-instagram fa-2x" style="color:#A5724C;"></i>
+          <i class="fab fa-facebook fa-2x" style="color:#A5724C;"></i>
         </div>
       </div>
-      <div style="flex:1; background: #E6DDD0; border-radius: 36px; min-height: 240px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color:#5E4A34; flex-direction: column;">
-        <i class="fas fa-map" style="font-size: 2rem; margin-bottom: 12px;"></i>
-        <span>📍 À 5 min à pied de la Gare de Lyon & métro</span>
-        <span style="font-size:0.7rem;">[Plan interactif disponible]</span>
+      <div style="flex:1; background: #EADDCB; border-radius: 36px; min-height: 240px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color:#5E4A34; flex-direction: column;">
+        <i class="fas fa-map-marked-alt" style="font-size: 2rem; margin-bottom: 12px;"></i>
+        <span>📍 À 5 min de l'aéroport international</span>
+        <span>Proche du quartier Ouaga 2000 & SIAO</span>
+        <span style="font-size:0.7rem;">Navette disponible sur demande</span>
       </div>
     </div>
   </div>
@@ -602,8 +602,8 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <h4><i class="fas fa-star-of-life"></i> Hôtel Étoile</h4>
-      <p>Réservation directe sans commission.<br>Meilleur tarif garanti en ligne.</p>
+      <h4><i class="fas fa-star-of-life"></i> Hôtel Sahel Splendeur</h4>
+      <p>Réservation directe sans commission.<br>Meilleur tarif garanti en ligne – Paiement sécurisé à l'arrivée.</p>
     </div>
     <div class="footer-col">
       <h4>Explorer</h4>
@@ -611,11 +611,11 @@
     </div>
     <div class="footer-col">
       <h4>Contact direct</h4>
-      <p><i class="fas fa-phone-alt"></i> +33 1 23 45 67 89<br><i class="fab fa-whatsapp"></i> WhatsApp : +33 7 56 98 74 12</p>
+      <p><i class="fas fa-phone-alt"></i> +226 25 36 98 74<br><i class="fab fa-whatsapp"></i> WhatsApp : +226 70 12 34 56</p>
     </div>
   </div>
   <div class="copyright">
-    © 2026 Hôtel Étoile – Design moderne – Réservation instantanée
+    © 2026 Hôtel Sahel Splendeur – Ouagadougou – Réservation instantanée
   </div>
 </footer>
 
@@ -625,14 +625,16 @@
 </a>
 
 <script>
-  const HOTEL_PHONE = "33756987412";  
+  // Numéro WhatsApp Burkina Faso (exemple valide avec indicatif +226)
+  const HOTEL_PHONE = "22670123456";   // remplacer par le numéro réel de l'hôtel à Ouaga
+  
   function generateMsg(checkin, checkout, adults, roomDetail) {
-    let msg = `Bonjour, je souhaite réserver à l'Hôtel Étoile :%0A`;
+    let msg = `Bonjour, je souhaite réserver à l'Hôtel Sahel Splendeur (Ouagadougou) :%0A`;
     if(checkin) msg += `📅 Arrivée : ${checkin}%0A`;
     if(checkout) msg += `📅 Départ : ${checkout}%0A`;
     if(adults) msg += `👥 Adultes : ${adults}%0A`;
     if(roomDetail) msg += `🏨 Chambre : ${roomDetail}%0A`;
-    msg += `%0AMerci de me confirmer disponibilité et prix total.`;
+    msg += `%0AMerci de me confirmer disponibilité et prix total (FCFA).`;
     return msg;
   }
 
@@ -641,7 +643,7 @@
     const checkout = document.getElementById('checkout').value;
     const adults = document.getElementById('adults').value;
     const roomSelect = document.getElementById('roomTypeSelect');
-    const room = roomSelect.options[roomSelect.selectedIndex]?.text || "Chambre Standard";
+    const room = roomSelect.options[roomSelect.selectedIndex]?.text || "Chambre Sahel";
     return { checkin, checkout, adults, room };
   }
 

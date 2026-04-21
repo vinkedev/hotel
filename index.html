@@ -21,30 +21,33 @@
       color: #1E293B;
       scroll-behavior: smooth;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
     }
 
-    /* Palette : bleu nuit #0F172A, orange #EA580C, gris #475569 */
+    /* Boutons */
     .btn-primary {
       background: #EA580C;
       color: white;
       border: none;
-      padding: 14px 32px;
+      padding: 14px 28px;
       font-size: 1rem;
       font-weight: 600;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-primary:hover {
@@ -57,15 +60,17 @@
       background: transparent;
       border: 1.5px solid #EA580C;
       color: #EA580C;
-      padding: 10px 24px;
+      padding: 10px 20px;
       border-radius: 8px;
       font-weight: 600;
       transition: 0.2s;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       font-size: 0.9rem;
+      cursor: pointer;
     }
 
     .btn-outline:hover {
@@ -74,88 +79,7 @@
       color: #C2410C;
     }
 
-    .btn-secondary {
-      background: #1E293B;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-secondary:hover {
-      background: #0F172A;
-    }
-
-    /* Navbar moderne avec transition */
-    .navbar {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-      z-index: 1000;
-      padding: 16px 0;
-      border-bottom: 1px solid #E2E8F0;
-      transition: all 0.3s ease;
-    }
-    
-    /* Navbar réduite au scroll */
-    .navbar.scrolled {
-      padding: 10px 0;
-      background: rgba(255, 255, 255, 0.98);
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .nav-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #0F172A;
-      transition: all 0.3s ease;
-    }
-    
-    .navbar.scrolled .logo {
-      font-size: 1.5rem;
-    }
-    
-    .logo span {
-      color: #EA580C;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #334155;
-      transition: 0.2s;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: #EA580C;
-    }
-
-    /* Barre de progression de scroll */
+    /* Barre de progression */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -167,51 +91,119 @@
       transition: width 0.1s ease-out;
     }
 
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      padding: 16px 0;
+      border-bottom: 1px solid #E2E8F0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0F172A;
+    }
+    
+    .logo span {
+      color: #EA580C;
+    }
+
+    /* Menu desktop */
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #334155;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #EA580C;
+    }
+
+    /* Menu burger (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #0F172A;
+      background: none;
+      border: none;
+    }
+
     /* Hero section */
     .hero {
       background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-      padding: 60px 0 80px;
+      padding: 50px 0 70px;
     }
+    
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 50px;
+      gap: 40px;
     }
+    
     .hero-text {
       flex: 1.2;
       min-width: 280px;
     }
+    
     .hero-text h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
       line-height: 1.2;
       color: white;
       margin-bottom: 20px;
       letter-spacing: -1px;
     }
+    
     .hero-text p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #CBD5E1;
       margin-bottom: 32px;
-      max-width: 90%;
     }
+    
     .hero-badge {
       background: rgba(234, 88, 12, 0.15);
-      padding: 8px 18px;
+      padding: 6px 16px;
       border-radius: 40px;
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       color: #F97316;
     }
+    
     .hero-image {
       flex: 1;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 30px 40px -20px rgba(0,0,0,0.4);
-      min-height: 380px;
+      min-height: 320px;
       background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=550&fit=crop');
       background-size: cover;
       background-position: center;
@@ -221,7 +213,7 @@
     .booking-widget {
       background: white;
       border-radius: 20px;
-      padding: 32px 36px;
+      padding: 28px 24px;
       box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
       margin-top: -50px;
       position: relative;
@@ -231,21 +223,21 @@
 
     .widget-title {
       font-weight: 700;
-      margin-bottom: 24px;
-      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
       color: #0F172A;
     }
 
     .booking-form {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 15px;
       align-items: flex-end;
     }
 
     .form-group {
       flex: 1;
-      min-width: 150px;
+      min-width: 160px;
     }
 
     .form-group label {
@@ -255,12 +247,12 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #64748B;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .form-group input, .form-group select {
       width: 100%;
-      padding: 14px 18px;
+      padding: 12px 16px;
       border-radius: 10px;
       border: 1px solid #CBD5E1;
       font-family: inherit;
@@ -268,6 +260,7 @@
       font-size: 0.9rem;
       transition: 0.2s;
     }
+    
     .form-group input:focus, .form-group select:focus {
       outline: none;
       border-color: #EA580C;
@@ -284,18 +277,19 @@
 
     /* Sections */
     .section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
+    
     .section-title {
-      font-size: 2.3rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       text-align: center;
       color: #0F172A;
       letter-spacing: -0.5px;
     }
 
-    /* ========== ANIMATIONS AU SCROLL ========== */
+    /* Animations */
     .fade-up {
       opacity: 0;
       transform: translateY(40px);
@@ -329,177 +323,212 @@
       transform: translateX(0);
     }
     
-    /* Délais d'animation pour effet cascade */
     .delay-1 { transition-delay: 0.1s; }
     .delay-2 { transition-delay: 0.2s; }
     .delay-3 { transition-delay: 0.3s; }
     .delay-4 { transition-delay: 0.4s; }
-    /* ======================================== */
 
     /* Chambres */
     .rooms-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      justify-content: center;
     }
+    
     .room-card {
       background: white;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
-      flex: 1;
-      min-width: 280px;
-      max-width: 360px;
       border: 1px solid #E2E8F0;
     }
+    
     .room-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
     }
+    
     .room-img {
-      height: 240px;
+      height: 220px;
       background-size: cover;
       background-position: center;
     }
+    
     .room-info {
-      padding: 24px;
+      padding: 20px;
     }
+    
     .room-info h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 8px;
       color: #0F172A;
     }
+    
     .room-price {
       font-weight: 800;
       color: #EA580C;
-      font-size: 1.5rem;
-      margin: 12px 0;
+      font-size: 1.4rem;
+      margin: 10px 0;
     }
+    
     .room-features {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin: 18px 0 20px;
+      margin: 15px 0 18px;
       font-size: 0.8rem;
       color: #475569;
     }
 
     /* Services */
     .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
     }
+    
     .service-item {
-      flex: 1;
-      min-width: 130px;
       background: white;
       padding: 24px 16px;
       border-radius: 20px;
+      text-align: center;
       transition: all 0.3s ease;
       border: 1px solid #E2E8F0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
+    
     .service-item:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-5px);
       box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     }
+    
     .service-item i {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #EA580C;
       margin-bottom: 12px;
       display: inline-block;
     }
+    
     .service-item span {
       font-weight: 600;
       color: #1E293B;
       display: block;
+      font-size: 0.9rem;
     }
 
     /* Avis */
     .reviews {
       background: #F8FAFE;
     }
+    
     .review-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
+    
     .review-card {
       background: white;
       border-radius: 20px;
-      padding: 28px;
-      max-width: 340px;
+      padding: 24px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
       border: 1px solid #E2E8F0;
       transition: all 0.3s ease;
     }
+    
     .review-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     }
+    
     .stars i {
       color: #F59E0B;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-right: 2px;
     }
+    
     .review-text {
       font-style: normal;
-      margin: 18px 0;
+      margin: 16px 0;
       color: #334155;
       font-weight: 500;
       line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .contact-map {
+      flex: 1;
+      background: #E2E8F0;
+      border-radius: 20px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
     }
 
     /* Footer */
     .footer {
       background: #0F172A;
       color: #CBD5E1;
-      padding: 60px 0 30px;
+      padding: 50px 0 30px;
       margin-top: 40px;
     }
+    
     .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
     }
+    
     .footer-col h4 {
-      font-size: 1.1rem;
-      margin-bottom: 18px;
+      font-size: 1rem;
+      margin-bottom: 16px;
       font-weight: 600;
       color: white;
     }
+    
     .footer a {
       color: #94A3B8;
       text-decoration: none;
       transition: 0.2s;
+      font-size: 0.9rem;
     }
+    
     .footer a:hover {
       color: #EA580C;
     }
+    
     .copyright {
       text-align: center;
-      margin-top: 56px;
-      font-size: 0.8rem;
+      margin-top: 45px;
+      font-size: 0.75rem;
       border-top: 1px solid #1E293B;
-      padding-top: 28px;
+      padding-top: 25px;
     }
 
     /* Floating button */
     .floating-resa {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 20px;
+      right: 20px;
       background: #25D366;
       border-radius: 50px;
-      padding: 14px 26px;
+      padding: 12px 22px;
       color: white;
       font-weight: bold;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -507,38 +536,219 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
+      gap: 10px;
+      font-size: 0.85rem;
       transition: all 0.3s ease;
     }
+    
     .floating-resa:hover {
       transform: scale(1.05);
       background: #20B859;
     }
 
-    @media (max-width: 780px) {
-      .container { padding: 0 20px; }
-      .hero-text h1 { font-size: 2.2rem; }
-      .booking-form { flex-direction: column; }
-      .section-title { font-size: 1.8rem; }
-      .btn-primary, .btn-whatsapp { width: 100%; justify-content: center; }
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-bottom: 1px solid #E2E8F0;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      .hero {
+        padding: 40px 0 50px;
+      }
+      
+      .hero-grid {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .hero-text {
+        text-align: center;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-text p {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+      
+      .hero-image {
+        min-height: 250px;
+        width: 100%;
+      }
+      
+      .booking-widget {
+        margin-top: -40px;
+        padding: 20px;
+      }
+      
+      .widget-title {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .booking-form {
+        flex-direction: column;
+      }
+      
+      .form-group {
+        width: 100%;
+      }
+      
+      .btn-primary, .btn-whatsapp {
+        width: 100%;
+        white-space: normal;
+      }
+      
+      .section {
+        padding: 45px 0;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+      }
+      
+      .rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      
+      .service-item {
+        padding: 18px 12px;
+      }
+      
+      .service-item i {
+        font-size: 1.6rem;
+      }
+      
+      .service-item span {
+        font-size: 0.8rem;
+      }
+      
+      .review-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .contact-grid {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+      }
+      
+      .floating-resa {
+        padding: 10px 18px;
+        font-size: 0.8rem;
+      }
+      
+      .floating-resa span {
+        display: inline;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-badge {
+        font-size: 0.7rem;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+      }
+      
+      .room-info h3 {
+        font-size: 1.2rem;
+      }
+      
+      .room-price {
+        font-size: 1.2rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn-primary, .btn-outline {
+        font-size: 0.85rem;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Barre de progression de scroll -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <nav class="navbar" id="navbar">
   <div class="container nav-flex">
     <div class="logo">Hôtel <span>Kadiogo</span></div>
-    <div class="nav-links">
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="#chambres"><i class="fas fa-bed"></i> Chambres</a>
       <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
       <a href="#avis"><i class="fas fa-star"></i> Avis</a>
       <a href="#contact"><i class="fas fa-map-pin"></i> Contact</a>
-      <a href="#" id="navReserveBtn" class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Réserver</a>
+      <a href="#" id="navReserveBtn" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fab fa-whatsapp"></i> Réserver</a>
     </div>
   </div>
 </nav>
@@ -548,7 +758,7 @@
   <div class="container hero-grid">
     <div class="hero-text fade-right visible">
       <div class="hero-badge"><i class="fas fa-building"></i> Hôtel d'affaires & confort</div>
-      <h1>Votre base <br>à Ouagadougou</h1>
+      <h1>Votre base à Ouagadougou</h1>
       <p>Design moderne, espaces de travail, connexion haut débit et service professionnel. Idéal pour vos séjours d'affaires et escapades.</p>
       <a href="#" class="btn-primary" id="heroReserveBtn"><i class="fab fa-whatsapp"></i> Réserver maintenant</a>
     </div>
@@ -563,15 +773,15 @@
     <div class="booking-form">
       <div class="form-group">
         <label><i class="fas fa-calendar-check"></i> Arrivée</label>
-        <input type="date" id="checkin" value="2026-05-15">
+        <input type="date" id="checkin">
       </div>
       <div class="form-group">
         <label><i class="fas fa-calendar-day"></i> Départ</label>
-        <input type="date" id="checkout" value="2026-05-18">
+        <input type="date" id="checkout">
       </div>
       <div class="form-group">
         <label><i class="fas fa-user-friends"></i> Adultes</label>
-        <select id="adults"><option>1</option><option selected>2</option><option>3</option></select>
+        <select id="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
       </div>
       <div class="form-group">
         <label><i class="fas fa-door-open"></i> Type de chambre</label>
@@ -582,10 +792,10 @@
         </select>
       </div>
       <div class="form-group">
-        <button id="whatsappBookingBtn" class="btn-primary btn-whatsapp" style="background:#25D366; width:100%;"><i class="fab fa-whatsapp"></i> Réserver via WhatsApp</button>
+        <button id="whatsappBookingBtn" class="btn-primary btn-whatsapp" style="background:#25D366; width:100%;"><i class="fab fa-whatsapp"></i> Réserver</button>
       </div>
     </div>
-    <p style="font-size: 0.7rem; margin-top: 16px; color:#64748B;"><i class="fas fa-lock"></i> Réservation instantanée - Confirmation sous 5min - Paiement à l'arrivée</p>
+    <p style="font-size: 0.7rem; margin-top: 14px; color:#64748B; text-align: center;"><i class="fas fa-lock"></i> Réservation instantanée - Confirmation sous 5min - Paiement à l'arrivée</p>
   </div>
 </div>
 
@@ -599,7 +809,7 @@
         <div class="room-info">
           <h3>Chambre Affaires</h3>
           <div class="room-price">85 000 CFA <small>/ nuit</small></div>
-          <div class="room-features"><i class="fas fa-bed"></i> Lit Queen • <i class="fas fa-desktop"></i> Bureau • <i class="fas fa-wifi"></i> Wi-Fi ultra rapide</div>
+          <div class="room-features"><i class="fas fa-bed"></i> Lit Queen • <i class="fas fa-desktop"></i> Bureau • <i class="fas fa-wifi"></i> Wi-Fi</div>
           <button class="btn-outline bookRoomBtn" data-room="Chambre Affaires – 85 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
@@ -617,7 +827,7 @@
         <div class="room-info">
           <h3>Suite Présidentielle</h3>
           <div class="room-price">185 000 CFA <small>/ nuit</small></div>
-          <div class="room-features"><i class="fas fa-users"></i> Salon séparé • <i class="fas fa-wine-glass-alt"></i> Mini-bar offert • <i class="fas fa-bath"></i> Jacuzzi</div>
+          <div class="room-features"><i class="fas fa-users"></i> Salon • <i class="fas fa-wine-glass-alt"></i> Mini-bar • <i class="fas fa-bath"></i> Jacuzzi</div>
           <button class="btn-outline bookRoomBtn" data-room="Suite Présidentielle – 185 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
@@ -625,7 +835,7 @@
   </div>
 </section>
 
-<!-- Services business -->
+<!-- Services -->
 <section id="services" class="section" style="background:#F8FAFE;">
   <div class="container">
     <h2 class="section-title fade-up">Services pour professionnels</h2>
@@ -648,7 +858,7 @@
       <div class="review-card fade-up delay-1">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <div class="review-text">“Excellent hôtel d'affaires. Wi-Fi parfait, chambre confortable et personnel très réactif. Je recommande vivement.”</div>
-        <p><strong>— Thomas D.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Consultant international</p>
+        <p><strong>— Thomas D.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Consultant</p>
       </div>
       <div class="review-card fade-up delay-2">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -667,21 +877,21 @@
 <!-- Contact -->
 <section id="contact" class="section">
   <div class="container">
-    <div style="display: flex; flex-wrap: wrap; gap: 50px;">
-      <div style="flex:1" class="fade-right">
-        <h3 style="font-size: 1.8rem; margin-bottom: 24px; font-weight: 700; color:#0F172A;"><i class="fas fa-map-marker-alt" style="color:#EA580C;"></i> Nous contacter</h3>
+    <div class="contact-grid">
+      <div class="contact-info fade-right">
+        <h3 style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; color:#0F172A;"><i class="fas fa-map-marker-alt" style="color:#EA580C;"></i> Nous contacter</h3>
         <p style="margin-bottom: 8px;"><strong>Hôtel Kadiogo</strong><br>Avenue Kwame Nkrumah, Secteur 4<br>Ouagadougou, Burkina Faso</p>
-        <p><i class="fas fa-phone-alt"></i> <a href="tel:+22625369874" style="color:#EA580C;">+226 25 36 98 74</a><br>
+        <p style="margin: 15px 0;"><i class="fas fa-phone-alt"></i> <a href="tel:+22625369874" style="color:#EA580C; text-decoration: none;">+226 25 36 98 74</a><br>
         <i class="fas fa-envelope"></i> contact@hotelkadiogo.bf</p>
-        <div style="margin: 32px 0;">
+        <div style="margin: 25px 0;">
           <a href="#" id="contactWhatsappBtn" class="btn-primary" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Réserver par WhatsApp</a>
         </div>
-        <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <div style="display: flex; gap: 20px;">
           <i class="fab fa-linkedin fa-2x" style="color:#64748B; cursor:pointer;"></i>
           <i class="fab fa-instagram fa-2x" style="color:#64748B; cursor:pointer;"></i>
         </div>
       </div>
-      <div style="flex:1; background: #E2E8F0; border-radius: 20px; min-height: 240px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;" class="fade-left">
+      <div class="contact-map fade-left">
         <div>
           <i class="fas fa-map-marked-alt" style="font-size: 2rem; color:#EA580C; margin-bottom: 12px;"></i>
           <p><strong>À 10 min de l'aéroport</strong></p>
@@ -696,7 +906,7 @@
   <div class="container footer-grid">
     <div class="footer-col fade-up">
       <h4><i class="fas fa-building"></i> Hôtel Kadiogo</h4>
-      <p>L'excellence pour vos séjours d'affaires à Ouagadougou. Réservez directement au meilleur prix.</p>
+      <p>L'excellence pour vos séjours d'affaires à Ouagadougou.</p>
     </div>
     <div class="footer-col fade-up delay-1">
       <h4>Liens rapides</h4>
@@ -712,13 +922,23 @@
   </div>
 </footer>
 
-<!-- Floating WhatsApp -->
 <a href="#" id="floatingWhatsappBtn" class="floating-resa">
   <i class="fab fa-whatsapp fa-lg"></i> <span>Réserver</span>
 </a>
 
 <script>
   const HOTEL_PHONE = "22670123456";
+  
+  // Dates par défaut
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const nextWeek = new Date(today);
+  nextWeek.setDate(nextWeek.getDate() + 3);
+  
+  function formatDate(date) {
+    return date.toISOString().split('T')[0];
+  }
   
   function generateMsg(checkin, checkout, adults, roomDetail) {
     return `Bonjour Hôtel Kadiogo, je souhaite réserver :%0A📅 Arrivée : ${checkin}%0A📅 Départ : ${checkout}%0A👥 Adultes : ${adults}%0A🏨 Chambre : ${roomDetail}%0A%0AMerci de me confirmer la disponibilité et le prix total.`;
@@ -738,6 +958,13 @@
     window.open(url, '_blank');
   }
 
+  // Initialisation des dates
+  if(document.getElementById('checkin')) {
+    document.getElementById('checkin').value = formatDate(today);
+    document.getElementById('checkout').value = formatDate(nextWeek);
+  }
+
+  // Événements
   document.getElementById('whatsappBookingBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
     const { checkin, checkout, adults, room } = getWidgetVals();
@@ -749,9 +976,9 @@
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const roomInfo = btn.getAttribute('data-room');
-      const today = new Date().toISOString().split('T')[0];
-      const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-      openWA(today, tomorrow, "2", roomInfo);
+      const todayDate = formatDate(new Date());
+      const tomorrowDate = formatDate(new Date(Date.now() + 86400000));
+      openWA(todayDate, tomorrowDate, "2", roomInfo);
     });
   });
 
@@ -759,52 +986,72 @@
     const { checkin, checkout, adults, room } = getWidgetVals();
     openWA(checkin, checkout, adults, room);
   };
+  
   document.getElementById('heroReserveBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
   document.getElementById('navReserveBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
   document.getElementById('floatingWhatsappBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
   document.getElementById('contactWhatsappBtn')?.addEventListener('click', (e) => { e.preventDefault(); simpleReserve(); });
 
-  const today = new Date().toISOString().split('T')[0];
-  const nextDate = new Date(Date.now() + 2*86400000).toISOString().split('T')[0];
-  if(document.getElementById('checkin') && !document.getElementById('checkin').value) document.getElementById('checkin').value = today;
-  if(document.getElementById('checkout') && !document.getElementById('checkout').value) document.getElementById('checkout').value = nextDate;
-
-  // ========== ANIMATIONS AU SCROLL ==========
+  // Animations Intersection Observer
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -30px 0px"
   };
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Une fois animé, on arrête d'observer
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
   
-  // Observer tous les éléments avec les classes d'animation
   document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
     observer.observe(el);
   });
   
-  // ========== BARRE DE PROGRESSION DE SCROLL ==========
+  // Barre de progression
   window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (winScroll / height) * 100;
-    document.getElementById('scrollProgress').style.width = scrolled + '%';
-  });
-  
-  // ========== NAVBAR QUI SE RÉDUIT AU SCROLL ==========
-  window.addEventListener('scroll', () => {
+    const progressBar = document.getElementById('scrollProgress');
+    if(progressBar) progressBar.style.width = scrolled + '%';
+    
+    // Navbar scrolled
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
+  });
+  
+  // Menu burger
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  menuToggle?.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    if(icon.classList.contains('fa-bars')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+  
+  // Fermer le menu quand on clique sur un lien
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    });
   });
 </script>
 </body>

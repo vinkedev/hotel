@@ -92,7 +92,7 @@
       background: #0F172A;
     }
 
-    /* Navbar moderne */
+    /* Navbar moderne avec transition */
     .navbar {
       position: sticky;
       top: 0;
@@ -102,6 +102,14 @@
       z-index: 1000;
       padding: 16px 0;
       border-bottom: 1px solid #E2E8F0;
+      transition: all 0.3s ease;
+    }
+    
+    /* Navbar réduite au scroll */
+    .navbar.scrolled {
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
     }
 
     .nav-flex {
@@ -117,7 +125,13 @@
       font-weight: 800;
       letter-spacing: -0.5px;
       color: #0F172A;
+      transition: all 0.3s ease;
     }
+    
+    .navbar.scrolled .logo {
+      font-size: 1.5rem;
+    }
+    
     .logo span {
       color: #EA580C;
     }
@@ -139,6 +153,18 @@
 
     .nav-links a:hover {
       color: #EA580C;
+    }
+
+    /* Barre de progression de scroll */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #EA580C, #F97316);
+      z-index: 1001;
+      transition: width 0.1s ease-out;
     }
 
     /* Hero section */
@@ -269,6 +295,47 @@
       letter-spacing: -0.5px;
     }
 
+    /* ========== ANIMATIONS AU SCROLL ========== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Délais d'animation pour effet cascade */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    /* ======================================== */
+
     /* Chambres */
     .rooms-grid {
       display: flex;
@@ -334,9 +401,13 @@
       background: white;
       padding: 24px 16px;
       border-radius: 20px;
-      transition: 0.2s;
+      transition: all 0.3s ease;
       border: 1px solid #E2E8F0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .service-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     }
     .service-item i {
       font-size: 2.2rem;
@@ -367,6 +438,11 @@
       max-width: 340px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
       border: 1px solid #E2E8F0;
+      transition: all 0.3s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     }
     .stars i {
       color: #F59E0B;
@@ -433,10 +509,10 @@
       align-items: center;
       gap: 12px;
       font-size: 0.9rem;
-      transition: 0.2s;
+      transition: all 0.3s ease;
     }
     .floating-resa:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
       background: #20B859;
     }
 
@@ -451,7 +527,10 @@
 </head>
 <body>
 
-<nav class="navbar">
+<!-- Barre de progression de scroll -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav class="navbar" id="navbar">
   <div class="container nav-flex">
     <div class="logo">Hôtel <span>Kadiogo</span></div>
     <div class="nav-links">
@@ -467,19 +546,19 @@
 <!-- Hero section -->
 <section class="hero">
   <div class="container hero-grid">
-    <div class="hero-text">
+    <div class="hero-text fade-right visible">
       <div class="hero-badge"><i class="fas fa-building"></i> Hôtel d'affaires & confort</div>
       <h1>Votre base <br>à Ouagadougou</h1>
       <p>Design moderne, espaces de travail, connexion haut débit et service professionnel. Idéal pour vos séjours d'affaires et escapades.</p>
       <a href="#" class="btn-primary" id="heroReserveBtn"><i class="fab fa-whatsapp"></i> Réserver maintenant</a>
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image fade-left visible"></div>
   </div>
 </section>
 
 <!-- Widget réservation -->
 <div class="container" style="margin-top: -40px;">
-  <div class="booking-widget">
+  <div class="booking-widget fade-up">
     <div class="widget-title"><i class="fas fa-calendar-alt" style="color:#EA580C;"></i> Réservez votre chambre en quelques secondes</div>
     <div class="booking-form">
       <div class="form-group">
@@ -513,9 +592,9 @@
 <!-- Chambres -->
 <section id="chambres" class="section">
   <div class="container">
-    <h2 class="section-title">Nos chambres modernes</h2>
+    <h2 class="section-title fade-up">Nos chambres modernes</h2>
     <div class="rooms-grid">
-      <div class="room-card">
+      <div class="room-card fade-up delay-1">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Chambre Affaires</h3>
@@ -524,7 +603,7 @@
           <button class="btn-outline bookRoomBtn" data-room="Chambre Affaires – 85 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
-      <div class="room-card">
+      <div class="room-card fade-up delay-2">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Chambre Executive</h3>
@@ -533,7 +612,7 @@
           <button class="btn-outline bookRoomBtn" data-room="Chambre Executive – 120 000 CFA/nuit"><i class="fab fa-whatsapp"></i> Réserver</button>
         </div>
       </div>
-      <div class="room-card">
+      <div class="room-card fade-up delay-3">
         <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=500&h=300&fit=crop');"></div>
         <div class="room-info">
           <h3>Suite Présidentielle</h3>
@@ -549,14 +628,14 @@
 <!-- Services business -->
 <section id="services" class="section" style="background:#F8FAFE;">
   <div class="container">
-    <h2 class="section-title">Services pour professionnels</h2>
+    <h2 class="section-title fade-up">Services pour professionnels</h2>
     <div class="services-grid">
-      <div class="service-item"><i class="fas fa-wifi"></i><span>Fibre optique 1 Gb/s</span></div>
-      <div class="service-item"><i class="fas fa-chalkboard-user"></i><span>Salles de réunion</span></div>
-      <div class="service-item"><i class="fas fa-parking"></i><span>Parking sécurisé</span></div>
-      <div class="service-item"><i class="fas fa-dumbbell"></i><span>Salle de sport</span></div>
-      <div class="service-item"><i class="fas fa-concierge-bell"></i><span>Room service 24/7</span></div>
-      <div class="service-item"><i class="fas fa-car"></i><span>Navette aéroport</span></div>
+      <div class="service-item fade-up delay-1"><i class="fas fa-wifi"></i><span>Fibre optique 1 Gb/s</span></div>
+      <div class="service-item fade-up delay-2"><i class="fas fa-chalkboard-user"></i><span>Salles de réunion</span></div>
+      <div class="service-item fade-up delay-3"><i class="fas fa-parking"></i><span>Parking sécurisé</span></div>
+      <div class="service-item fade-up delay-4"><i class="fas fa-dumbbell"></i><span>Salle de sport</span></div>
+      <div class="service-item fade-up delay-1"><i class="fas fa-concierge-bell"></i><span>Room service 24/7</span></div>
+      <div class="service-item fade-up delay-2"><i class="fas fa-car"></i><span>Navette aéroport</span></div>
     </div>
   </div>
 </section>
@@ -564,19 +643,19 @@
 <!-- Avis -->
 <section id="avis" class="section reviews">
   <div class="container">
-    <h2 class="section-title">Ce que nos clients disent</h2>
+    <h2 class="section-title fade-up">Ce que nos clients disent</h2>
     <div class="review-cards">
-      <div class="review-card">
+      <div class="review-card fade-up delay-1">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <div class="review-text">“Excellent hôtel d'affaires. Wi-Fi parfait, chambre confortable et personnel très réactif. Je recommande vivement.”</div>
         <p><strong>— Thomas D.</strong> <i class="fas fa-check-circle" style="color:#25D366;"></i> Consultant international</p>
       </div>
-      <div class="review-card">
+      <div class="review-card fade-up delay-2">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <div class="review-text">“Idéalement situé à Ouaga, accueil professionnel et chambres modernes. Le service WhatsApp est un vrai plus.”</div>
         <p><strong>— Aïssata B.</strong> <i class="fas fa-medal"></i> Cadre en mission</p>
       </div>
-      <div class="review-card">
+      <div class="review-card fade-up delay-3">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
         <div class="review-text">“Très bonne literie, calme et petit-déjeuner copieux. Parfait pour mes déplacements professionnels.”</div>
         <p><strong>— Ibrahim S.</strong> Entrepreneur</p>
@@ -589,7 +668,7 @@
 <section id="contact" class="section">
   <div class="container">
     <div style="display: flex; flex-wrap: wrap; gap: 50px;">
-      <div style="flex:1">
+      <div style="flex:1" class="fade-right">
         <h3 style="font-size: 1.8rem; margin-bottom: 24px; font-weight: 700; color:#0F172A;"><i class="fas fa-map-marker-alt" style="color:#EA580C;"></i> Nous contacter</h3>
         <p style="margin-bottom: 8px;"><strong>Hôtel Kadiogo</strong><br>Avenue Kwame Nkrumah, Secteur 4<br>Ouagadougou, Burkina Faso</p>
         <p><i class="fas fa-phone-alt"></i> <a href="tel:+22625369874" style="color:#EA580C;">+226 25 36 98 74</a><br>
@@ -602,7 +681,7 @@
           <i class="fab fa-instagram fa-2x" style="color:#64748B; cursor:pointer;"></i>
         </div>
       </div>
-      <div style="flex:1; background: #E2E8F0; border-radius: 20px; min-height: 240px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+      <div style="flex:1; background: #E2E8F0; border-radius: 20px; min-height: 240px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;" class="fade-left">
         <div>
           <i class="fas fa-map-marked-alt" style="font-size: 2rem; color:#EA580C; margin-bottom: 12px;"></i>
           <p><strong>À 10 min de l'aéroport</strong></p>
@@ -615,15 +694,15 @@
 
 <footer class="footer">
   <div class="container footer-grid">
-    <div class="footer-col">
+    <div class="footer-col fade-up">
       <h4><i class="fas fa-building"></i> Hôtel Kadiogo</h4>
       <p>L'excellence pour vos séjours d'affaires à Ouagadougou. Réservez directement au meilleur prix.</p>
     </div>
-    <div class="footer-col">
+    <div class="footer-col fade-up delay-1">
       <h4>Liens rapides</h4>
       <p><a href="#chambres">Chambres</a><br><a href="#services">Services</a><br><a href="#avis">Avis clients</a></p>
     </div>
-    <div class="footer-col">
+    <div class="footer-col fade-up delay-2">
       <h4>Contact</h4>
       <p><i class="fas fa-phone-alt"></i> +226 25 36 98 74<br><i class="fab fa-whatsapp"></i> WhatsApp : +226 70 12 34 56</p>
     </div>
@@ -689,6 +768,44 @@
   const nextDate = new Date(Date.now() + 2*86400000).toISOString().split('T')[0];
   if(document.getElementById('checkin') && !document.getElementById('checkin').value) document.getElementById('checkin').value = today;
   if(document.getElementById('checkout') && !document.getElementById('checkout').value) document.getElementById('checkout').value = nextDate;
+
+  // ========== ANIMATIONS AU SCROLL ==========
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Une fois animé, on arrête d'observer
+      }
+    });
+  }, observerOptions);
+  
+  // Observer tous les éléments avec les classes d'animation
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // ========== BARRE DE PROGRESSION DE SCROLL ==========
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('scrollProgress').style.width = scrolled + '%';
+  });
+  
+  // ========== NAVBAR QUI SE RÉDUIT AU SCROLL ==========
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 </script>
 </body>
 </html>
